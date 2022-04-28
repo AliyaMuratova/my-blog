@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 const BlogEntry = (props) => {
     console.log(props)
@@ -14,7 +15,7 @@ const BlogEntry = (props) => {
                     <p>{props.desc}</p>
                     <div className="w3-row">
                         <div className="w3-col m8 s12">
-                            <p><button className="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button></p>
+                            <p><button className="w3-button w3-padding-large w3-white w3-border"><Link to="/post"><b>READ MORE »</b></Link></button></p>
                         </div>
                         <div className="w3-col m4 w3-hide-small">
                             <p><span className="w3-padding-large w3-right"><b>Comments &nbsp;</b> <span className="w3-tag">{props.countComments}</span></span></p>
