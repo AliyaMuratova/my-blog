@@ -4,12 +4,13 @@ import Posts from "../Posts/Posts";
 import Tags from "../Tags/Tags";
 
 const IntroductionMenu = () => {
+
     return (
-            <div className="w3-col l4">
-               <AboutCard />
-                <Posts />
-                <Tags />
-            </div>
+        <div className="w3-col l4">
+            <AboutCard/>
+            <Posts/>
+            <Tags/>
+        </div>
     );
 };
 
