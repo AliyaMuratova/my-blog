@@ -22,7 +22,7 @@ const Tags = () => {
                     {
                         tags.map((item, index) => {
                             return (
-                                <span key={index} className="w3-tag w3-light-grey w3-small w3-margin-bottom">{item.tag}</span>
+                                <span key={index} style={{marginLeft:"3px"}} className="w3-tag w3-light-grey w3-small w3-margin-bottom">{item.tag}</span>
                             )
                         })
                     }
