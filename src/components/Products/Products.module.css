@@ -1,0 +1,11 @@
+.products {
+    margin: 50px;
+}
+
+.product_cards {
+    display: flex;
+}
+.cards {
+    list-style-type: none;
+    margin-right: 20px;
+}
