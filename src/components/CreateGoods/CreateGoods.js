@@ -31,7 +31,7 @@ const CreateGoods = ({products}) => {
                                     <td><img className={styles.card_img} src={item.img} alt=""/></td>
                                     <td>{item.name}</td>
                                     <td>$ {item.price}</td>
-                                    <td>Удалить</td>
+                                    <td onClick={deleteProduct} style={{cursor:'pointer'}}>Удалить</td>
                                 </tr>
                             )
                         })
