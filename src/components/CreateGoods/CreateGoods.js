@@ -2,7 +2,19 @@ import React from 'react';
 import {Link} from "react-router-dom";
 import styles from './CreateGoods.module.css';
 
+const url = 'http://localhost:3001/products';
+
 const CreateGoods = ({products}) => {
+
+    const deleteProduct = () => {
+        const options = {
+            method: 'DELETE'
+        }
+        fetch(url + '/' + 1, options)
+            .then(response => response.json())
+            .then(data => console.log(data))
+    }
+
     return (
         <div className={styles.product_table}>
             <table>
