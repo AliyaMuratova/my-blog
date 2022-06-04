@@ -1,9 +1,16 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 import Products from "../../components/Products/Products";
+import styles from './product-page.module.css'
 
-const ProductPage = () => {
+const ProductPage = ({products}) => {
     return (
-        <Products/>
+        <>
+            <Products
+                products={products}
+            />
+            <Link to="/create-goods"><button className={styles.button}>Добавить товар</button></Link>
+        </>
     );
 };
 

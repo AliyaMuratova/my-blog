@@ -1,9 +1,11 @@
 import React from 'react';
 import CreateGoods from "../../components/CreateGoods/CreateGoods";
 
-const CreateGoodsPage = () => {
+const CreateGoodsPage = ({products}) => {
     return (
-        <CreateGoods/>
+        <CreateGoods
+            products={products}
+        />
     );
 };
 

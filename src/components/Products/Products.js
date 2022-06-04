@@ -1,20 +1,8 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import Product from "../Product/Product";
-import {BASE_URL} from "../../constants";
 import styles from './Products.module.css'
 
-const Products = () => {
-    const [products, setProducts] = useState([]);
-
-    const getProducts = () => {
-        fetch(BASE_URL + '/products')
-            .then(response => response.json())
-            .then(data => setProducts(data))
-    }
-
-    useEffect(getProducts, []);
-
-
+const Products = ({products}) => {
     return (
         <div className={styles.products}>
             <ul className={styles.product_cards}>
