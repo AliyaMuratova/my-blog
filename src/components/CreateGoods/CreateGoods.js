@@ -10,6 +10,7 @@ const CreateGoods = ({products}) => {
                     <th>Img</th>
                     <th>Name</th>
                     <th>Price</th>
+                    <th>&nbsp;</th>
                 </tr>
                     {
                         products.map((item, index) => {
@@ -18,6 +19,7 @@ const CreateGoods = ({products}) => {
                                     <td><img className={styles.card_img} src={item.img} alt=""/></td>
                                     <td>{item.name}</td>
                                     <td>$ {item.price}</td>
+                                    <td>Удалить</td>
                                 </tr>
                             )
                         })
