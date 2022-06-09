@@ -1,0 +1,50 @@
+.product_table {
+    background-color: #EDE8DC;
+    width: 800px;
+    margin: 70px auto 0;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.card_img {
+    width: 180px;
+}
+.product_table table {
+    border-spacing: 30px 20px;
+}
+.buttons {
+    width: 520px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.product_table button {
+    background-color: #0C2340;
+    color: white;
+    width: 250px;
+    padding: 15px;
+    cursor: pointer;
+}
+
+table tr td {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: #0C2340;
+}
+
+.empty_cart {
+    width: 200px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.empty_cart p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    color: #0C2340;
+}
