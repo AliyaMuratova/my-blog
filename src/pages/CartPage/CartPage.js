@@ -3,38 +3,61 @@ import styles from './CartPage.module.css'
 import {Link} from "react-router-dom";
 
 const CartPage = () => {
-    const cart = localStorage.getItem('cart')
-    const cartProducts = JSON.parse(cart)
+    const cartItems = localStorage.getItem('cart')
+        ? Object.values(JSON.parse(localStorage.getItem('cart')) )
+        : []
+
+    const deleteFromCart = (product) => {
+        const updatedCart = cartItems.filter(cartProduct => cartProduct.id !== product.id)
+
+        localStorage.setItem('cart', JSON.stringify(updatedCart))
+    }
+
+
     return (
         <div className={styles.product_table}>
+            <div className={styles.title}>
+                <p>Корзина</p>
+            </div>
+
             {
-                cartProducts === null ?
-                (<div className={styles.empty_cart}>
-                    <p>В корзине пусто</p>
-                </div>):(
+                cartItems.length === 0  ?
+                    (<div className={styles.empty_cart}>
+                        <p>В корзине пусто</p>
+                    </div>) : (
                         <table>
+                            <tbody>
                             <tr>
+                                <th>#</th>
                                 <th>Img</th>
                                 <th>Name</th>
                                 <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Delete</th>
                                 <th>&nbsp;</th>
                             </tr>
-
-                            <tr>
-                                <td><img className={styles.card_img} src={cartProducts.img} alt=""/></td>
-                                <td>{cartProducts.name}</td>
-                                <td>$ {cartProducts.price}</td>
-                                <td style={{cursor: 'pointer'}}>Удалить</td>
-                            </tr>
-
+                            {
+                                cartItems.map((product, idx) => {
+                                    return (
+                                        <tr key={idx} className={styles.items}>
+                                            <td>&nbsp;</td>
+                                            <td><img className={styles.card_img} src={product.img} alt=""/></td>
+                                            <td>{product.name}</td>
+                                            <td>{product.price} сом</td>
+                                            <td>{1}</td>
+                                            <td onClick={() => deleteFromCart(product)} style={{cursor: 'pointer'}}>Удалить</td>
+                                        </tr>
+                                    )
+                                })
+                            }
+                        </tbody>
                         </table>
                     )
             }
 
+
             <div className={styles.buttons}>
-                <Link to="/add-item">
                     <button>Оплатить</button>
-                </Link>
                 <Link to="/products">
                     <button>На главную</button>
                 </Link>

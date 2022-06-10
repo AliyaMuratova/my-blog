@@ -20,22 +20,23 @@ const ProductPage = () => {
     useEffect(getProducts, [])
     return (
         <div className={styles.wrapper}>
-            {
-                products.map((item) => {
-                    return (
-                        <>
-                        <Product
-                            key={item.id}
-                            img={item.img}
-                            name={item.name}
-                            price={item.price}
-                            id={item.id}
-                        />
-                            <Link to="/cart-page"><button>Корзина</button></Link>
-                        </>
-                    )
-                })
-            }
+            <div className={styles.cards}>
+                {
+                    products.map((item) => {
+                        return (
+                            <Product
+                                key={item.id}
+                                img={item.img}
+                                name={item.name}
+                                price={item.price}
+                                id={item.id}
+                            />
+                        )
+                    })
+                }
+            </div>
+
+            <Link to="/cart-page"><button className={styles.cart_button}>Корзина</button></Link>
         </div>
     );
 };

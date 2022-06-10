@@ -1,10 +1,9 @@
 import React from 'react';
-import {Link} from "react-router-dom";
 import styles from './Product.module.css';
 
 const Product = (props) => {
 
-    let addCart = () => {
+    let addToCart = () => {
         let productsFromLocalStorage = {};
         if (localStorage.getItem('cart')){
              productsFromLocalStorage = JSON.parse(localStorage.getItem('cart'));
@@ -14,6 +13,7 @@ const Product = (props) => {
         product[props.id]={
             ...props
         };
+
         localStorage.setItem('cart', JSON.stringify({...productsFromLocalStorage, ...product}))
     };
 
@@ -23,7 +23,7 @@ const Product = (props) => {
             <h4 className={styles.name}>{props.name}</h4>
             <p className={styles.price}>{props.price} сом</p>
             <button
-                onClick={addCart}
+                onClick={addToCart}
                 className={styles.card_button}
             >Купить</button>
         </div>
