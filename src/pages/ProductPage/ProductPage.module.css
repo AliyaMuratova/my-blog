@@ -12,6 +12,7 @@
 .cards {
     display: flex;
     flex-wrap: wrap;
+    gap: 15px;
     width: auto;
     margin-bottom: 70px;
 }

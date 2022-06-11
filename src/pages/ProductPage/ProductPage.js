@@ -35,7 +35,6 @@ const ProductPage = () => {
                     })
                 }
             </div>
-
             <Link to="/cart-page"><button className={styles.cart_button}>Корзина</button></Link>
         </div>
     );
